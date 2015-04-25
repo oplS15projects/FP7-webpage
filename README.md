@@ -35,7 +35,7 @@ The simple callback function controls the whole process of looping the operation
 ```
 
 #How to Download and Run
-You will need to download "war_final_code.rkt" file to your local computer. You will also need to have DrRacket libraries available. Here is the link to the code.
+You will need to download "war_final_code.rkt" file to your local computer. You will also need to have DrRacket libraries available. Here is the link to the code. ![Code link: ](war_final_code.rkt)
 
 Run war_final_code.rkt and click on Move button to start the game. At the end of the game the result will be displayed in the status. To play another game, you will have to close the program and click run again in DrRacket.
 
