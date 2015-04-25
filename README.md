@@ -1,53 +1,41 @@
-# FP7-webpage Title of Project
-This is a template for using your repo's README.md as your project web page. 
-I recommend you copy and paste into your README file. Delete this line and the one above it, customize everything else. Make it look good!
+# higher or lower
 
 ##Authors
-Person One
+Liuchen Ye
 
-Person Two
+Anand Surisetti
 
 ##Overview
-A brief description of the project is given here.  The description is 1 to 3 sentences long.  Be concise and clear.
+This project implements a simplified "war" card game using DrRacket. It is a two player game. One being the computer and the other the player. The game deals 7 random cards to each player. Then each player discards a card from the top of his deck in turn and whoever gets higher card in value scores 2 points. The game keeps track of the score and whoever gets highest score wins the game.
 
 ##Screenshot
-(insert a screenshot here. You may opt to get rid of the title for it. You need at least one screenshot. Make it actually appear here, don't just add a link.)
 
-Here's a demonstration of how to display an image that's uploaded to this repo:
-![screenshot showing env diagram](withdraw.png)
+![screenshot showing cards game](cardgame1.png)
 
 ##Concepts Demonstrated
-Identify the OPL concepts demonstrated in your project. Be brief. A simple list and example is sufficient. 
-* **Data abstraction** is used to provide access to the elements of the RSS feed.
-* The objects in the OpenGL world are represented with **recursive data structures.**
-* **Symbolic language processing techniques** are used in the parser.
+* **Data abstraction** is used to provide access to the cards library.
+
+* **Lambda** inline functions are used for button click call back procedures.
 
 ##External Technology and Libraries
-Briefly describe the existing technology you utilized, and how you used it. Provide a link to that technology(ies).
+We used games/cards library
+
 
 ##Favorite Lines of Code
-####Mark (a team member)
-Each team member should identify a favorite line of code, expression, or procedure written by them, and explain what it does. Why is it your favorite? What OPL philosophy does it embody?
-Remember code looks something like this:
-```scheme
-(map (lambda (x) (foldr compose functions)) data)
+####Liuchen Ye
+The following code shuffles cards and the optimal number of perfect shuffle is 7:
 ```
-####Lillian (another team member)
-This expression reads in a regular expression and elegantly matches it against a pre-existing hashmap....
-```scheme
-(let* ((expr (convert-to-regexp (read-line my-in-port)))
-             (matches (flatten
-                       (hash-map *words*
-                                 (lambda (key value)
-                                   (if (regexp-match expr key) key '()))))))
-  matches)
+(define deck (shuffle-list (make-deck) 7)
+  ))
 ```
-
-##Additional Remarks
-Anything else you want to say in your report. Can rename or remove this section.
+####Anand Surisetti
+The simple callback function controls the whole process of looping the operation....
+```
+(region-callback hit-button)
+```
 
 #How to Download and Run
-You may want to link to your latest release for easy downloading by people (such as Mark).
+You will need to download "war_final_code.rkt" file to your local computer. You will also need to have DrRacket libraries available. Here is the link to the code. ![Code link: ](war_final_code.rkt)
 
-Include what file to run, what to do with that file, how to interact with the app when its running, etc. 
+Run war_final_code.rkt and click on Move button to start the game. At the end of the game the result will be displayed in the status. To play another game, you will have to close the program and click run again in DrRacket.
 
