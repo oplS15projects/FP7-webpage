@@ -1,14 +1,12 @@
-# FP7-webpage Title of Project
-This is a template for using your repo's README.md as your project web page. 
-I recommend you copy and paste into your README file. Delete this line and the one above it, customize everything else. Make it look good!
+# FP7-higher or lower
 
 ##Authors
-Person One
+Liuchen Ye
 
-Person Two
+Anand Surisetti
 
 ##Overview
-A brief description of the project is given here.  The description is 1 to 3 sentences long.  Be concise and clear.
+This project is impleA brief description of the project is given here.  The description is 1 to 3 sentences long.  Be concise and clear.
 
 ##Screenshot
 (insert a screenshot here. You may opt to get rid of the title for it. You need at least one screenshot. Make it actually appear here, don't just add a link.)
