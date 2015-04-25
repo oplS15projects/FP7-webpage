@@ -10,7 +10,7 @@ This project implements a simplified "war" card game using DrRacket. It is a two
 
 ##Screenshot
 
-![screenshot showing cards game](cards_screen_1.png)
+![screenshot showing cards game](cardgame1.png)
 
 ##Concepts Demonstrated
 Identify the OPL concepts demonstrated in your project. Be brief. A simple list and example is sufficient. 
