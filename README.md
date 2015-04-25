@@ -13,30 +13,25 @@ This project implements a simplified "war" card game using DrRacket. It is a two
 ![screenshot showing cards game](cardgame1.png)
 
 ##Concepts Demonstrated
-Identify the OPL concepts demonstrated in your project. Be brief. A simple list and example is sufficient. 
 * **Data abstraction** is used to provide access to the elements of the RSS feed.
 * The objects in the OpenGL world are represented with **recursive data structures.**
 * **Symbolic language processing techniques** are used in the parser.
 
 ##External Technology and Libraries
-Briefly describe the existing technology you utilized, and how you used it. Provide a link to that technology(ies).
+We used games/cards library
+
 
 ##Favorite Lines of Code
-####Mark (a team member)
+####Liuchen Ye
 Each team member should identify a favorite line of code, expression, or procedure written by them, and explain what it does. Why is it your favorite? What OPL philosophy does it embody?
 Remember code looks something like this:
 ```scheme
 (map (lambda (x) (foldr compose functions)) data)
 ```
-####Lillian (another team member)
-This expression reads in a regular expression and elegantly matches it against a pre-existing hashmap....
-```scheme
-(let* ((expr (convert-to-regexp (read-line my-in-port)))
-             (matches (flatten
-                       (hash-map *words*
-                                 (lambda (key value)
-                                   (if (regexp-match expr key) key '()))))))
-  matches)
+####Anand Surisetti
+The simple callback function controls the whole process of looping the operation....
+```
+(region-callback hit-button)
 ```
 
 ##Additional Remarks
