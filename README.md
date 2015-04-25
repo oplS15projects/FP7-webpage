@@ -1,4 +1,4 @@
-# FP7-higher or lower
+# higher or lower
 
 ##Authors
 Liuchen Ye
@@ -13,9 +13,9 @@ This project implements a simplified "war" card game using DrRacket. It is a two
 ![screenshot showing cards game](cardgame1.png)
 
 ##Concepts Demonstrated
-* **Data abstraction** is used to provide access to the elements of the RSS feed.
-* The objects in the OpenGL world are represented with **recursive data structures.**
-* **Symbolic language processing techniques** are used in the parser.
+* **Data abstraction** is used to provide access to the cards library.
+
+* **Lambda** inline functions are used for button click call back procedures.
 
 ##External Technology and Libraries
 We used games/cards library
@@ -23,10 +23,10 @@ We used games/cards library
 
 ##Favorite Lines of Code
 ####Liuchen Ye
-Each team member should identify a favorite line of code, expression, or procedure written by them, and explain what it does. Why is it your favorite? What OPL philosophy does it embody?
-Remember code looks something like this:
-```scheme
-(map (lambda (x) (foldr compose functions)) data)
+The following code shuffles cards and the optimal number of perfect shuffle is 7:
+```
+(define deck (shuffle-list (make-deck) 7)
+  ))
 ```
 ####Anand Surisetti
 The simple callback function controls the whole process of looping the operation....
@@ -34,11 +34,8 @@ The simple callback function controls the whole process of looping the operation
 (region-callback hit-button)
 ```
 
-##Additional Remarks
-Anything else you want to say in your report. Can rename or remove this section.
-
 #How to Download and Run
 You may want to link to your latest release for easy downloading by people (such as Mark).
 
-Include what file to run, what to do with that file, how to interact with the app when its running, etc. 
+Run war_final_code.rkt and click on Move button to start the game. At the end of the game the result will be displayed in the status. To play another game, you will have to close the program and click run again in DrRacket.
 
