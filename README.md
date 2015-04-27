@@ -18,10 +18,9 @@ A League of Legends statistics application written in Racket and HTML5 that inte
 
 
 ##External Technology and Libraries
-Briefly describe the existing technology you utilized, and how you used it. Provide a link to that technology(ies).
-Riot API - http://api.riotgames.com
-Racket Web Server Library - http://docs.racket-lang.org/web-server
-JSON Library - http://docs.racket-lang.org/json
+* Riot API - http://api.riotgames.com
+* Racket Web Server Library - http://docs.racket-lang.org/web-server
+* JSON Library - http://docs.racket-lang.org/json
 
 
 ##Favorite Lines of Code
