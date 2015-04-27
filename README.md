@@ -25,27 +25,28 @@ A League of Legends statistics application written in Racket and HTML5 that inte
 
 ##Favorite Lines of Code
 ####Nick
-Each team member should identify a favorite line of code, expression, or procedure written by them, and explain what it does. Why is it your favorite? What OPL philosophy does it embody?
-Remember code looks something like this:
-```scheme
-(map (lambda (x) (foldr compose functions)) data)
+Explanation
 ```
-####Josh (another team member)
-This expression reads in a regular expression and elegantly matches it against a pre-existing hashmap....
-```scheme
-(let* ((expr (convert-to-regexp (read-line my-in-port)))
-             (matches (flatten
-                       (hash-map *words*
-                                 (lambda (key value)
-                                   (if (regexp-match expr key) key '()))))))
-  matches)
+code
+```
+
+####Josh
+Explanation
+```
+code
+```
+
+####Ron
+Explanation
+```
+code
 ```
 
 ##Additional Remarks
-Anything else you want to say in your report. Can rename or remove this section.
+We had a lot of fun with this project because we got to do something we were interested in. Thanks for letting us choose.
 
 #How to Download and Run
 Open the Racket file in DrRacket, run the file. Enter a summoner name in the box, then the necessary data will be retrieved and displayed on a web page for your viewing pleasure.
 
-Latest Release: http://google.com
+Latest Release: https://github.com/oplS15projects/Will-They-Feed
 
