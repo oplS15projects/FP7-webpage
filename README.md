@@ -50,31 +50,33 @@ RSound was used to play the random sounds as the player traverses each node.
 
 My favorite piece of code was the A* algorithm itself. I felt that it came out looking fairly straightforward. While I think it could have been optimized a bit more through condensing it into separate functions, I didn't find it necessary since none of the code was repeated.
 
-> ; Define the A* search function.
-> (define (search GRID A B)
->   (let ([open nil]        ; The open list, which contains tiles for the algorithm to consider as it walks through the "maze".
->         [closed nil]      ; The closed list, which contains tiles that have already been considered (traversed) and can be ignored.
->         [current nil]     ; The current tile.
->         [neighbors nil])  ; A list containing the neighbors of the current tile.
->     (set! open (append open (list A)))                             ; Add the start tile to the open list.
->     (define (searchLoop)
->       (begin (set! current (lowestF open))                         ; Find the tile in the open list with the lowest F score.
->              (set! closed (append closed (list current)))          ; Add the current tile to the closed list since we're done "exploring" it.
->              (set! open (remove current open))                     ; Remove the current tile from the open list so we don't accidentally "explore" it again.
->              (unless (sameTile? current B)                         ; Unless this is the goal tile, keep searching. Otherwise, we're done here.
->                (begin (set! neighbors (getNeighbors GRID current))  ; Retrieve the 8 neighbor tiles surrounding the current tile. Un-walkable tiles excluded.
->                       (map (lambda (t)                              ; Map over each neighbor tile...
->                              (unless (member t closed)              ; Ignore tiles that are on the closed list... we've already "explored" them.
->                                (when (not (member t open))          ; If the neighbor is not in the open list...
->                                  (begin (send t setG (compG current t))                   ; Compute the G score of the neighbor.
->                                         (send t setH (compH t B))                         ; Compute the H score of the neighbor.
->                                         (send t setF (compF (send t getG) (send t getH))) ; Compute the F score of the neighbor.
->                                         (send t setParent current)                        ; Set the parent of the neighbor to the current tile.
->                                         (set! open (append open (list t)))))))            ; Add the neighbor to the open list.
->                            neighbors)
->                       (unless (empty? open) (searchLoop))))))       ; If there are no more tiles in the open list, we're done searching.
->     (searchLoop)  ; Call the search procedure's main loop.
->     (retrace GRID A current)))  ; Retrace the steps from goal to start to find the path that the "player" takes.
+```scheme
+; Define the A* search function.
+(define (search GRID A B)
+  (let ([open nil]        ; The open list, which contains tiles for the algorithm to consider as it walks through the "maze".
+        [closed nil]      ; The closed list, which contains tiles that have already been considered (traversed) and can be ignored.
+        [current nil]     ; The current tile.
+        [neighbors nil])  ; A list containing the neighbors of the current tile.
+    (set! open (append open (list A)))                             ; Add the start tile to the open list.
+    (define (searchLoop)
+      (begin (set! current (lowestF open))                         ; Find the tile in the open list with the lowest F score.
+             (set! closed (append closed (list current)))          ; Add the current tile to the closed list since we're done "exploring" it.
+             (set! open (remove current open))                     ; Remove the current tile from the open list so we don't accidentally "explore" it again.
+             (unless (sameTile? current B)                         ; Unless this is the goal tile, keep searching. Otherwise, we're done here.
+               (begin (set! neighbors (getNeighbors GRID current))  ; Retrieve the 8 neighbor tiles surrounding the current tile. Un-walkable tiles excluded.
+                      (map (lambda (t)                              ; Map over each neighbor tile...
+                             (unless (member t closed)              ; Ignore tiles that are on the closed list... we've already "explored" them.
+                               (when (not (member t open))          ; If the neighbor is not in the open list...
+                                 (begin (send t setG (compG current t))                   ; Compute the G score of the neighbor.
+                                        (send t setH (compH t B))                         ; Compute the H score of the neighbor.
+                                        (send t setF (compF (send t getG) (send t getH))) ; Compute the F score of the neighbor.
+                                        (send t setParent current)                        ; Set the parent of the neighbor to the current tile.
+                                        (set! open (append open (list t)))))))            ; Add the neighbor to the open list.
+                           neighbors)
+                      (unless (empty? open) (searchLoop))))))       ; If there are no more tiles in the open list, we're done searching.
+    (searchLoop)  ; Call the search procedure's main loop.
+    (retrace GRID A current)))  ; Retrace the steps from goal to start to find the path that the "player" takes.
+```
 
 ##Additional Remarks
 #### Darin
