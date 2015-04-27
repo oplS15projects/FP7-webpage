@@ -14,7 +14,7 @@ A League of Legends statistics application written in Racket and HTML5 that inte
 (insert a screenshot here. You may opt to get rid of the title for it. You need at least one screenshot. Make it actually appear here, don't just add a link.)
 
 Here's a demonstration of how to display an image that's uploaded to this repo:
-![screenshot showing env diagram](withdraw.png)
+![screenshot showing env diagram](http://i.imgur.com/uXrEimz.png)
 
 ##Concepts Demonstrated
 * **Abstraction** is used separate the HTML5 file from the Racket Web Server & Data being passed.
