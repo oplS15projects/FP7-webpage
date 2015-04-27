@@ -3,9 +3,9 @@ This is a template for using your repo's README.md as your project web page.
 I recommend you copy and paste into your README file. Delete this line and the one above it, customize everything else. Make it look good!
 
 ##Authors
-Nick Lombardi
-Joshua Semedo
-Ron
+* Nick Lombardi
+* Joshua Semedo
+* Ron
 
 ##Overview
 A League of Legends statistics application written in Racket and HTML5 that interfaces with the Riot API to retrieve important information regarding a players performance that is then calculated to determine the likelyhood the player will perform poorly.
