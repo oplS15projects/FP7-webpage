@@ -11,14 +11,10 @@ I recommend you copy and paste into your README file. Delete this line and the o
 A League of Legends statistics application written in Racket and HTML5 that interfaces with the Riot API to retrieve important information regarding a players performance that is then calculated to determine the likelyhood the player will perform poorly.
 
 ##Screenshot
-(insert a screenshot here. You may opt to get rid of the title for it. You need at least one screenshot. Make it actually appear here, don't just add a link.)
-
-Here's a demonstration of how to display an image that's uploaded to this repo:
 ![screenshot showing env diagram](http://i.imgur.com/uXrEimz.png)
 
 ##Concepts Demonstrated
 * **Abstraction** is used separate the HTML5 file from the Racket Web Server & Data being passed.
-* ** **
 
 
 ##External Technology and Libraries
