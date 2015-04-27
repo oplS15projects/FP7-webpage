@@ -25,21 +25,51 @@ A League of Legends statistics application written in Racket and HTML5 that inte
 
 ##Favorite Lines of Code
 ####Nick
-Explanation
+This is just an example of what I like to write; The nesting tags and strict formatting, in my opinion, make writing code an artform.  I love it when everything comes together perfectly, and displays exdactly how I want it to.
 ```
-code
+            <div class="col-md-8 col-md-offset-2">
+                <section class="tile transparent">
+                    <div class="jumbotron bg-transparent-black-3 row">
+                        <div class="container text-center col-md-6">
+                            <img class="inline-block" src="http://lkimg.zamimg.com/shared/riot/images/profile_icons/profileIcon@|icon|" style="width: 64px; vertical-align: top;">
+                            <h1 class="inline-block" style="padding-left: 20px; margin-top: 0;">@|name|</h1>
+                            <p>Summoner Level</p>
+                        </div>
+                        <div class="container text-center col-md-6">
+                            <h1>@|feederscore|!</h1>
+                        </div>
+                    </div>
+                </section>
+            </div>
 ```
 
 ####Josh
-Explanation
+This is my favorite code block for a few reasons. I created the feeder-score statistic, and got to make up the metrics for it.  It looks a little messy, but it takes the KDA, adds it to the winloss ratio(after converting it to a decimal), then cuts off the unnecessary digits, then assigns it to the variable x, which then gets passed to the cond block, which will simply output the line of text, telling you how likely you are to feed.
+
 ```
-code
+    (define feeder-score 
+      (let ([x (truncate (* 10 (+ (/ (+ ranked-kills ranked-assists) ranked-deaths) (exact->inexact ranked-win-loss))))])
+        (cond [(< x 25)
+               (printf "- Feeder Score is ~a, this person is likely to feed.\n" x)]
+               [(and (> x 25) (< x 40))
+               (printf "- Feeder Score is ~a, this person is average.\n" x)]
+               [(> x 40)
+               (printf "- Feeder Score is ~a, this person is likely to carry.\n" x)])))
 ```
 
 ####Ron
-Explanation
+I like these lines of code because this is the type of code that I helped write that bridges the gap between all of our work; Josh working with racket to get the variables all set up, me using the webserver with his racket code to generate a page, and Nick's html and css code to display it beautifully.
 ```
-code
+<h3 class="panel-title">Solo Queue: @tier @division </h3>
+                </div>
+                <div class="panel-body">
+                    The following are statistics regarding the players Solo-Queue performance. These carry rather significant value.
+
+                    <div class="progress-list" style="margin-top: 15px;">
+                        <div class="details">
+                            <div class="title"><strong> @soloqwins </strong> / @soloqlosses </div>
+                            <div class="description">Ranked Solo Queue Ratio</div>
+                        </div>
 ```
 
 ##Additional Remarks
